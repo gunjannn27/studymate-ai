@@ -1364,3 +1364,10 @@ button {
         padding: 10px 12px;
     }
 }
+.auth-card form p button:not([type="submit"]) {
+    background: transparent !important;
+    color: #F5D76E !important;
+    border: none !important;
+    text-decoration: underline;
+    box-shadow: none !important;
+}
