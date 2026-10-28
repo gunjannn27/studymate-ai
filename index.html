@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <!-- LOGIN AND SIGN UP -->
+    <div id="authPage" class="auth-page">
+        <div class="auth-card">
+            <div class="auth-logo">🎓</div>
+            <h1>StudyMate AI</h1>
+            <p>Your personal AI study companion</p>
+
+            <form id="loginForm">
+                <h2>Welcome Back!</h2>
+
+                <label for="loginEmail">Email</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <p id="loginMessage" aria-live="polite"></p>
+                <button type="submit">Login</button>
+
+                <p>
+                    Don't have an account?
+                    <button type="button" onclick="showSignup()">Sign Up</button>
+                </p>
+            </form>
+
+            <form id="signupForm" hidden>
+                <h2>Create Account</h2>
+
+                <label for="signupName">Full Name</label>
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="signupEmail">Email</label>
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="signupPassword">Password</label>
+                <input
+                    type="password"
+                    id="signupPassword"
+                    minlength="8"
+                    placeholder="At least 8 characters"
+                    required
+                >
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    minlength="8"
+                    placeholder="Confirm password"
+                    required
+                >
+
+                <p id="signupMessage" aria-live="polite"></p>
+                <button type="submit">Create Account</button>
+
+                <p>
+                    Already registered?
+                    <button type="button" onclick="showLogin()">Login</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN APPLICATION -->
+    <div id="appContent" hidden>
+
+        <header>
+            <h1>StudyMate AI</h1>
+            <p>Your personal student academic assistant</p>
+            <button type="button" onclick="logout()">Logout</button>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#assignments">Assignments</a>
+            <a href="#planner">
+                Exams
+                <span id="examNavBadge" class="exam-badge" hidden>0</span>
+            </a>
+            <a href="#timetable">Study Timetable</a>
+            <a href="#assistant">AI Assistant</a>
+        </nav>
+
+        <main>
+
+            <!-- DASHBOARD -->
+            <section id="dashboard">
+                <h2>Welcome, Student!</h2>
+                <p>Organize your studies and achieve your goals.</p>
+
+                <div class="card">
+                    <h3>My Study Progress</h3>
+
+                    <p>
+                        Assignments Completed:
+                        <span id="completedCount">0</span> / 3
+                    </p>
+
+                    <div class="progress-container">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+
+                    <p id="progressText">0% Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>📅 Upcoming Exams</h3>
+                    <p id="dashboardExamCount">0 exams scheduled</p>
+                    <p id="examReminderSummary">No exam reminders yet.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📚 Study Sessions</h3>
+                    <p id="dashboardSessionCount">0 sessions</p>
+                </div>
+
+                <div class="card">
+                    <h3>✅ Completed Assignments</h3>
+                    <p id="dashboardCompletedAssignments">0 completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Completed Study Sessions</h3>
+                    <p id="dashboardCompletedSessions">0 completed</p>
+                </div>
+            </section>
+
+            <!-- SUBJECTS -->
+            <section id="subjects">
+                <h2>📚 My Subjects</h2>
+
+                <div class="cards">
+                    <div class="card">Data Structures</div>
+                    <div class="card">DBMS</div>
+                    <div class="card">Python</div>
+                    <div class="card">Mathematics</div>
+                </div>
+            </section>
+
+<!-- ASSIGNMENTS -->
+<section id="assignments">
+    <h2>📝 My Assignments</h2>
+    <p>Track your progress subject by subject.</p>
+
+    <div id="assignmentProgressList"></div>
+</section>
+
+
+            <!-- EXAM PLANNER -->
+            <section id="planner">
+                <h2>📅 Exam Planner</h2>
+
+                <div class="card">
+                    <h3>Add Upcoming Exam</h3>
+
+                    <form id="examForm">
+                        <label for="examName">Exam Name</label>
+                        <input
+                            type="text"
+                            id="examName"
+                            placeholder="e.g. Mid Semester Exam"
+                            required
+                        >
+
+                        <label for="examSubject">Subject</label>
+                        <select id="examSubject" required>
+                            <option value="">Select Subject</option>
+                            <option value="Data Structures">Data Structures</option>
+                            <option value="DBMS">DBMS</option>
+                            <option value="Python">Python</option>
+                            <option value="Mathematics">Mathematics</option>
+                        </select>
+
+                        <label for="examDate">Exam Date</label>
+                        <input type="date" id="examDate" required>
+
+                        <button type="submit">Add Exam</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>Upcoming Exams</h3>
+
+                    <div id="examList">
+                        <p>No exams added yet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STUDY TIMETABLE -->
+            <section id="timetable">
+                <h2>Daily Study Timetable 📚</h2>
+                <p>Plan your study sessions and stay organized.</p>
+
+                <form id="timetableForm">
+                    <label for="studySubject">Subject</label>
+                    <select id="studySubject" required>
+                        <option value="">Choose a subject</option>
+                        <option value="Data Structures">Data Structures</option>
+                        <option value="DBMS">DBMS</option>
+                        <option value="Python">Python</option>
+                        <option value="Mathematics">Mathematics</option>
+                    </select>
+
+                    <label for="studyTime">Study Time</label>
+                    <input type="time" id="studyTime" required>
+
+                    <label for="studyDuration">Duration</label>
+                    <select id="studyDuration" required>
+                        <option value="30 minutes">30 minutes</option>
+                        <option value="1 hour">1 hour</option>
+                        <option value="2 hours">2 hours</option>
+                    </select>
+
+                    <label for="studyTopic">Topic to Study</label>
+                    <input
+                        type="text"
+                        id="studyTopic"
+                        placeholder="Enter topic name"
+                        required
+                    >
+
+                    <button type="submit">Add Study Session</button>
+                </form>
+
+                <h3>My Study Schedule</h3>
+                <div id="timetableList"></div>
+            </section>
+
+
+<!-- AI STUDY ASSISTANT -->
+<section id="assistant">
+    <h2>🤖 AI Study Assistant</h2>
+
+    <div class="card">
+        <p>Ask a question to get a basic study suggestion.</p>
+
+        <form id="studyQuestionForm">
+            <label for="studyQuestion">Your Question</label>
+
+            <input
+                type="text"
+                id="studyQuestion"
+                placeholder="Example: How should I prepare for DBMS?"
+                required
+            >
+
+            <button type="submit">Ask AI</button>
+        </form>
+
+        <div
+            id="studyAnswer"
+            class="chat-history"
+            aria-live="polite"
+        ></div>
+
+        <button
+            type="button"
+            id="clearChatButton"
+            class="clear-chat-button"
+        >
+            Clear Chat
+        </button>
+    </div>
+</section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>StudyMate AI | Your academic companion</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

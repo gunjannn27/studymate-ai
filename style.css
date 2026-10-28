@@ -1,0 +1,1366 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f5fc;
+    color: #26324b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 28px 7%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: white;
+    padding: 16px 7%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+nav a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+main {
+    width: 86%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+section {
+    margin-bottom: 35px;
+    scroll-margin-top: 20px;
+}
+
+h2 {
+    color: #303b65;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px #24304a12;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #4f46e5;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: #26324b;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    main {
+        width: 92%;
+    }
+}
+
+
+#studyQuestion {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3730a3;
+}
+
+#studyAnswer {
+    margin-top: 16px;
+    line-height: 1.7;
+}
+
+/* StudyMate AI Login Page */
+
+[hidden] {
+    display: none !important;
+}
+
+
+.auth-card {
+    width: 100%;
+    max-width: 950px;
+    padding: 30px 25px 24px;
+    background: #192956;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+
+.auth-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: transparent;
+}
+
+.auth-logo {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.auth-card > h1 {
+    color: white;
+    font-size: 25px;
+    margin: 10px 0 16px;
+}
+
+.auth-card > p {
+    color: #d3def5;
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+
+.auth-card form {
+    width: 100%;
+    padding: 28px 24px 20px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.auth-card form h2 {
+    color: #171717;
+    font-size: 23px;
+    margin: 0 0 20px;
+}
+
+.auth-card label {
+    display: block;
+    text-align: left;
+    color: #555;
+    margin: 14px 0 6px;
+}
+
+.auth-card input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 14px;
+    margin-bottom: 14px;
+    border: 1px solid #dedede;
+    border-radius: 11px;
+    font-size: 16px;
+}
+
+.auth-card form > button[type="submit"] {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 10px;
+    background: #2864ed;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-card form > button[type="submit"]:hover {
+    background: #174fd0;
+}
+
+.auth-card form p {
+    color: #666;
+    font-size: 14px;
+}
+
+.auth-card form p button:not([type="submit"]) {
+    background: transparent;
+    color: #2864ed;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 20px 12px;
+    }
+
+    .auth-card form {
+        padding: 20px 12px;
+    }
+}
+
+
+/* Fix StudyMate AI background */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050505;
+    position: relative;
+    isolation: isolate;
+}
+
+.background-effects {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: 
+        radial-gradient(ellipse at 10% 15%, rgba(35, 85, 200, 0.65), transparent 45%),
+        radial-gradient(ellipse at 90% 85%, rgba(110, 40, 180, 0.5), transparent 45%),
+        radial-gradient(ellipse at 50% 50%, #101a35, #050505 80%);
+}
+
+
+.glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.7;
+}
+
+.glow-1 {
+    background: #2864ed;
+    top: 5%;
+    left: 5%;
+}
+
+.glow-2 {
+    background: #8138e8;
+    right: 5%;
+    bottom: 5%;
+}
+
+.glow-3 {
+    background: #087eae;
+    left: 45%;
+    bottom: 0;
+}
+
+/* Keep your login card in front */
+#authPage,
+#appContent {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dashboard header layout */
+#appContent header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#appContent header button {
+    background: white;
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+#appContent header button:hover {
+    background: #e8eaff;
+}
+
+
+/* Improve dashboard heading visibility */
+#appContent h2 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#appContent section > p {
+    color: #ffffff;
+}
+
+/* Improve dashboard card appearance */
+#appContent .card {
+    background-color: #ffffff;
+    color: #26324b;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Make assignment text easy to read */
+#appContent .card h3 {
+    color: #4f46e5;
+}
+
+.exam-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.exam-badge[hidden] {
+    display: none;
+}
+
+/* Daily Study Timetable */
+#timetable {
+    margin-top: 30px;
+}
+
+#timetable form {
+    display: grid;
+    gap: 10px;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+#timetable label {
+    font-weight: bold;
+}
+
+#timetable input,
+#timetable select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#timetable button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#timetable button:hover {
+    background: #4338ca;
+}
+
+#timetableList .card {
+    margin-bottom: 12px;
+}
+
+/* Improve Daily Study Timetable visibility */
+#timetable {
+    color: #26324b;
+}
+
+#timetable h2,
+#timetable h3,
+#timetable p,
+#timetable label {
+    color: #26324b;
+}
+
+#timetableList .card {
+    background-color: #ffffff;
+    color: #26324b;
+    border: 1px solid #dbe2f0;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#timetableList .card h3 {
+    color: #4f46e5;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+#timetableList .card p {
+    color: #26324b;
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+#timetable input,
+#timetable select {
+    background-color: #ffffff;
+    color: #26324b;
+}
+
+#timetable input::placeholder {
+    color: #64748b;
+    opacity: 1;
+}
+
+/* Make timetable form text clearer */
+#timetable label {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 8px;
+}
+
+#timetable input,
+#timetable select {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    padding: 12px;
+}
+
+#timetable select option {
+    color: #111827;
+}
+
+#timetable input::placeholder {
+    color: #475569;
+    opacity: 1;
+}
+
+#timetable input:focus,
+#timetable select:focus {
+    outline: 2px solid #4f46e5;
+    outline-offset: 1px;
+}
+
+/* Make timetable text white */
+#timetable label,
+#timetable h2,
+#timetable h3,
+#timetable p,
+#timetableList .card,
+#timetableList .card p {
+    color: white !important;
+}
+
+#timetable input,
+#timetable select {
+    color: white !important;
+}
+
+#timetable select option {
+    color: black;
+}
+
+/* Outside text should be white */
+#timetable h2,
+#timetable h3,
+#timetable label,
+#timetable > p,
+#timetableList .card,
+#timetableList .card p {
+    color: white !important;
+}
+
+/* Inside input boxes and dropdowns should be black */
+#timetable input,
+#timetable select {
+    color: black !important;
+    background-color: white;
+}
+
+/* Placeholder text inside input boxes */
+#timetable input::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+/* Dropdown options */
+#timetable select option {
+    color: black;
+    background-color: white;
+}
+
+#timetableList {
+    color: white !important;
+}
+
+
+#timetableList .card {
+    color: black !important;
+}
+
+#timetableList .card h3,
+#timetableList .card p {
+    color: black !important;
+}
+
+/* ===== StudyMate AI: Black & Gold Theme ===== */
+
+:root {
+    --gold-bg: #101010;
+    --gold-card: #1D1D1D;
+    --gold-card-light: #302A1C;
+    --gold-text: #FFF9E8;
+    --gold-muted: #B8B4AA;
+    --gold-primary: #D4AF37;
+    --gold-light: #F5D76E;
+    --gold-border: #514321;
+}
+
+/* Main background and text */
+body {
+    background: var(--gold-bg) !important;
+    color: var(--gold-text);
+}
+
+/* Header */
+header {
+    background: linear-gradient(
+        135deg,
+        #252015,
+        #101010
+    ) !important;
+    color: var(--gold-text);
+    border-bottom: 1px solid var(--gold-border);
+}
+
+/* Common cards and sections */
+.card,
+.stat-card,
+.dashboard-card,
+.assignment-card,
+.exam-card,
+.subject-card,
+.session-card,
+section {
+    color: var(--gold-text);
+}
+
+/* Card backgrounds */
+.card,
+.stat-card,
+.dashboard-card,
+.assignment-card,
+.exam-card,
+.subject-card,
+.session-card {
+    background-color: var(--gold-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 14px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--gold-text);
+}
+
+/* Paragraphs and secondary text */
+p,
+label {
+    color: var(--gold-muted);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(
+        135deg,
+        var(--gold-primary),
+        var(--gold-light)
+    );
+    color: #101010;
+    border: 1px solid var(--gold-primary);
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Input fields */
+input,
+select,
+textarea {
+    background-color: var(--gold-card-light);
+    color: var(--gold-text);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gold-muted);
+}
+
+/* Links */
+a {
+    color: var(--gold-light);
+}
+
+/* Progress indicators */
+progress {
+    accent-color: var(--gold-primary);
+}
+
+/* Text selection */
+::selection {
+    background: var(--gold-primary);
+    color: #101010;
+}
+
+
+/* ===== FINAL BLACK & GOLD COLOR FIX ===== */
+
+/* Main page */
+body {
+    background: #101010 !important;
+    color: #FFF9E8 !important;
+}
+
+/* Replace blue and purple background effects with gold */
+.background-effects {
+    background:
+        radial-gradient(
+            ellipse at 10% 15%,
+            rgba(212, 175, 55, 0.16),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 90% 85%,
+            rgba(212, 175, 55, 0.12),
+            transparent 45%
+        ),
+        #101010 !important;
+}
+
+.glow-1,
+.glow-2,
+.glow-3 {
+    background: #D4AF37 !important;
+    opacity: 0.18 !important;
+}
+
+/* Header and navigation */
+header,
+#appContent header {
+    background: linear-gradient(135deg, #252015, #101010) !important;
+    color: #FFF9E8 !important;
+    border-bottom: 1px solid #514321;
+}
+
+nav {
+    background: #1D1D1D !important;
+    border-bottom: 1px solid #514321;
+}
+
+nav a,
+nav a[href="#exams"],
+nav a[href="#exam"] {
+    color: #F5D76E !important;
+}
+
+nav a:hover {
+    color: #D4AF37 !important;
+}
+
+/* Login and signup area */
+.auth-card {
+    background: #1D1D1D !important;
+    border: 1px solid #514321;
+    color: #FFF9E8 !important;
+}
+
+.auth-card > h1 {
+    color: #FFF9E8 !important;
+}
+
+.auth-card > p {
+    color: #B8B4AA !important;
+}
+
+.auth-card form {
+    background: #252015 !important;
+    border: 1px solid #514321;
+}
+
+.auth-card form h2 {
+    color: #FFF9E8 !important;
+}
+
+.auth-card label {
+    color: #D4AF37 !important;
+}
+
+.auth-card form p {
+    color: #B8B4AA !important;
+}
+
+.auth-card input {
+    background: #302A1C !important;
+    color: #FFF9E8 !important;
+    border: 1px solid #514321 !important;
+}
+
+.auth-card input::placeholder {
+    color: #B8B4AA !important;
+}
+
+.auth-card form > button[type="submit"] {
+    background: linear-gradient(135deg, #D4AF37, #F5D76E) !important;
+    color: #101010 !important;
+}
+
+.auth-card form > button[type="submit"]:hover {
+    background: #D4AF37 !important;
+}
+
+.auth-card form p button:not([type="submit"]) {
+    color: #F5D76E !important;
+}
+
+/* Dashboard headings and text */
+#appContent h2,
+#appContent section > p,
+#timetable h2,
+#timetable h3,
+#timetable p,
+#timetable label {
+    color: #FFF9E8 !important;
+}
+
+/* All dashboard cards */
+#appContent .card,
+#timetableList .card {
+    background: #1D1D1D !important;
+    color: #FFF9E8 !important;
+    border: 1px solid #514321 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+#appContent .card h3,
+#timetableList .card h3,
+#timetableList .card p {
+    color: #FFF9E8 !important;
+}
+
+/* Timetable inputs and dropdowns */
+#timetable input,
+#timetable select,
+#timetable select option {
+    background: #302A1C !important;
+    color: #FFF9E8 !important;
+    border: 1px solid #514321 !important;
+}
+
+#timetable input::placeholder {
+    color: #B8B4AA !important;
+}
+
+#timetable input:focus,
+#timetable select:focus {
+    outline: 2px solid #D4AF37 !important;
+}
+
+/* All buttons */
+button,
+#timetable button {
+    background: linear-gradient(135deg, #D4AF37, #F5D76E) !important;
+    color: #101010 !important;
+    border: 1px solid #D4AF37 !important;
+}
+
+button:hover,
+#timetable button:hover {
+    background: #D4AF37 !important;
+}
+
+/* Dashboard card headings */
+#appContent .card h3 {
+    color: #F5D76E !important;
+}
+
+/* Exam reminder badge remains noticeable */
+.exam-badge {
+    background: #8B6914 !important;
+    color: #FFF9E8 !important;
+}
+
+/* Footer */
+footer {
+    background: #1D1D1D !important;
+    color: #B8B4AA !important;
+    border-top: 1px solid #514321;
+}
+
+/* ===== Premium Black & Gold Polish ===== */
+
+/* Smooth card animations */
+#appContent .card,
+#timetableList .card {
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#appContent .card:hover,
+#timetableList .card:hover {
+    transform: translateY(-4px);
+    border-color: #D4AF37 !important;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+}
+
+/* Gold accent headings */
+#appContent h2,
+#timetable h2 {
+    border-left: 3px solid #D4AF37;
+    padding-left: 12px;
+}
+
+/* Premium navigation hover */
+nav a {
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #D4AF37 !important;
+}
+
+/* Gold focus effect for form fields */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+    border-color: #D4AF37 !important;
+}
+
+/* Buttons feel smoother */
+button {
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+button:hover {
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.2);
+}
+
+/* Gold scrollbar where supported */
+* {
+    scrollbar-color: #D4AF37 #1D1D1D;
+}
+
+
+/* ===== Premium Navigation Upgrade ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 12px;
+    align-items: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #F5D76E !important;
+    transition: background-color 0.25s ease,
+                color 0.25s ease;
+}
+
+nav a:hover {
+    background: #302A1C !important;
+    color: #D4AF37 !important;
+}
+
+/* Clear focus for keyboard users */
+nav a:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+}
+
+/* Give sections space when navigating */
+section {
+    scroll-margin-top: 90px;
+}
+
+/* AI STUDY ASSISTANT */
+#studyAnswer {
+    white-space: pre-line;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #1D1D1D;
+    border: 1px solid #514321;
+    border-left: 4px solid #D4AF37;
+    color: #FFF9E8;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+#studyQuestion {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+#studyQuestion:focus {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+
+/* RESPONSIVE DESIGN FOR STUDYMATE AI */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main,
+    .container,
+    #appContent {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section {
+        padding: 18px;
+        margin: 12px 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        min-height: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+
+
+/* ===== Compact Assignment Progress Cards ===== */
+
+.assignment-progress-card {
+    background: var(--gold-card) !important;
+    color: var(--gold-text);
+    border: 1px solid var(--gold-border);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 14px 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.assignment-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.assignment-card-header h3 {
+    color: var(--gold-light) !important;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.assignment-card-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.assignment-card-summary p {
+    margin: 0;
+    color: var(--gold-muted);
+    font-size: 0.9rem;
+}
+
+.assignment-progress-bar {
+    display: block;
+    width: 100%;
+    height: 9px;
+    margin-top: 10px;
+    accent-color: var(--gold-primary);
+}
+
+.assignment-status {
+    margin: 8px 0 0;
+    color: var(--gold-muted);
+    font-size: 0.85rem;
+}
+
+.assignment-view-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 7px;
+    min-height: 34px;
+}
+
+.assignment-tasks {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--gold-border);
+}
+
+.assignment-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 7px 0;
+    color: var(--gold-text);
+    overflow-wrap: anywhere;
+}
+
+.assignment-task input[type="checkbox"] {
+    width: 17px;
+    min-width: 17px;
+    height: 17px;
+    margin-top: 4px;
+    accent-color: var(--gold-primary);
+}
+
+.assignment-task label {
+    color: var(--gold-text);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .assignment-progress-card {
+        padding: 12px;
+    }
+
+    .assignment-card-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .assignment-card-summary p {
+        font-size: 0.8rem;
+    }
+
+    .assignment-view-button {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+}
+
+/* ==========================================
+   COMPACT ASSIGNMENT PROGRESS CARDS
+========================================== */
+
+.assignment-progress-card {
+    background: var(--gold-card, #151515);
+    color: var(--gold-text, #f5e6b8);
+    border: 1px solid var(--gold-border, #b89b50);
+    border-radius: 12px;
+    padding: 14px;
+    margin: 12px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.assignment-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.assignment-card-header h3 {
+    color: var(--gold-text, #f5e6b8);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.assignment-status {
+    display: inline-block;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--gold-text, #f5e6b8);
+}
+
+.assignment-card-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.assignment-card-summary p,
+.assignment-percentage {
+    margin: 0;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+.assignment-view-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    min-height: 32px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.assignment-progress-bar {
+    display: block;
+    width: 100%;
+    height: 9px;
+    margin-top: 10px;
+    accent-color: var(--gold-border, #b89b50);
+}
+
+.assignment-percentage {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.assignment-tasks {
+    border-top: 1px solid var(--gold-border, #b89b50);
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+.assignment-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.assignment-task input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    margin-top: 3px;
+    accent-color: var(--gold-border, #b89b50);
+    cursor: pointer;
+}
+
+.assignment-task label {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .assignment-progress-card {
+        padding: 11px;
+    }
+
+    .assignment-card-header h3 {
+        font-size: 0.93rem;
+    }
+
+    .assignment-card-summary p,
+    .assignment-percentage {
+        font-size: 0.8rem;
+    }
+
+    .assignment-view-button {
+        padding: 6px 8px;
+        font-size: 0.76rem;
+    }
+}
+
+/* ===== AI CHAT HISTORY - BLACK & GOLD ===== */
+
+#studyAnswer.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 450px;
+    overflow-y: auto;
+    margin-top: 18px;
+    padding: 16px;
+    background: #101010;
+    border: 1px solid #514321;
+    border-radius: 14px;
+    scroll-behavior: smooth;
+}
+
+/* Individual chat messages */
+#studyAnswer .chat-message {
+    max-width: 90%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    line-height: 1.7;
+}
+
+/* Message labels */
+#studyAnswer .chat-message strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #F5D76E;
+    font-size: 14px;
+}
+
+/* Message text */
+#studyAnswer .chat-message p {
+    margin: 0;
+    color: #FFF9E8;
+    white-space: pre-wrap;
+}
+
+/* Your questions */
+#studyAnswer .user-message {
+    align-self: flex-end;
+    background: #302A1C;
+    border: 1px solid #806923;
+}
+
+/* StudyMate AI responses */
+#studyAnswer .assistant-message {
+    align-self: flex-start;
+    background: #1D1D1D;
+    border: 1px solid #514321;
+    border-left: 4px solid #D4AF37;
+}
+
+/* Clear Chat button */
+.clear-chat-button {
+    margin-top: 12px;
+    background: #1D1D1D !important;
+    color: #F5D76E !important;
+    border: 1px solid #D4AF37 !important;
+}
+
+.clear-chat-button:hover {
+    background: #302A1C !important;
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    #studyAnswer.chat-history {
+        max-height: 380px;
+        padding: 10px;
+    }
+
+    #studyAnswer .chat-message {
+        max-width: 96%;
+        padding: 10px 12px;
+    }
+}
